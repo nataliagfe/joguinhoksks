@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo</title>
+    <link rel="stylesheet" href="oi.css">
+    <script>
+        let numerosSelecionados = '';
+
+        function adicionarNumero(numero) {
+            if (numerosSelecionados.length < 4) {
+                numerosSelecionados += numero;
+                document.getElementById('display-numeros').innerText = numerosSelecionados;
+            }
+        }
+
+        function confirmarVoto() {
+            // Verifica se os números selecionados são iguais a 2910
+            if (numerosSelecionados === '2910') {
+                showPopup("Feliz aniversário Lais! Sinceramente não conseguiria escrever o quanto sua amizade é importante pra mim!(a tela é pequenaksks) Queria te desejar tudo de bom nesse dia especial(aff tu nasceukkkkk) e que você realize todos os seus sonhos. PS: E que você tenha mais saúde! 😂");
+            } else {
+                showPopup("Número incorreto. Tente novamente!");
+            }
+        }
+
+        function showPopup(message) {
+            // Cria o overlay e o popup com estilos diretamente no JavaScript
+            const overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = 0;
+            overlay.style.left = 0;
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            overlay.style.display = 'flex';
+            overlay.style.alignItems = 'center';
+            overlay.style.justifyContent = 'center';
+            overlay.style.zIndex = 1000;
+
+            const popup = document.createElement('div');
+            popup.style.backgroundColor = '#fff';
+            popup.style.padding = '20px';
+            popup.style.borderRadius = '10px';
+            popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+            popup.style.textAlign = 'center';
+            popup.style.color = '#333';
+            popup.style.width = '80%';
+            popup.style.maxWidth = '400px';
+            popup.innerText = message;
+
+            const button = document.createElement('button');
+            button.innerText = 'Fechar';
+            button.style.marginTop = '18px';
+            button.style.padding = '10px 10px';
+            button.style.fontSize = '16px';
+            button.style.backgroundColor = '#dc3545';
+            button.style.color = '#fff';
+            button.style.border = 'none';
+            button.style.borderRadius = '5px';
+            button.style.cursor = 'pointer';
+            button.style.transition = 'background-color 0.3s';
+            button.onmouseover = function() {
+                button.style.backgroundColor = '#c82333';
+            };
+            button.onmouseout = function() {
+                button.style.backgroundColor = '#dc3545';
+            };
+            button.onclick = function() {
+                window.location.href = 'https://www.instagram.com/reel/DAt8lEpvyd7/?igsh=eHY3c3kwbXdjZnJs'; // Redireciona para a nova página
+            };
+
+            popup.appendChild(button);
+            overlay.appendChild(popup);
+            document.body.appendChild(overlay);
+        }
+    </script>
+</head>
+<body>
+    <div id="urna">
+        <div id="display">
+            <div class="titulo">Números Selecionados: <span id="display-numeros"></span></div>
+        </div>
+        <form id="form" method="POST" action="o.js">
+            <div id="botoes">
+                <button type="button" onclick="adicionarNumero('0')">0</button>
+                <button type="button" onclick="adicionarNumero('1')">1</button>
+                <button type="button" onclick="adicionarNumero('2')">2</button>
+                <button type="button" onclick="adicionarNumero('3')">3</button>
+                <button type="button" onclick="adicionarNumero('4')">4</button>
+                <button type="button" onclick="adicionarNumero('5')">5</button>
+                <button type="button" onclick="adicionarNumero('6')">6</button>
+                <button type="button" onclick="adicionarNumero('7')">7</button>
+                <button type="button" onclick="adicionarNumero('8')">8</button>
+                <button type="button" onclick="adicionarNumero('9')">9</button>
+            </div>
+
+            <div id="comandos">
+                <button type="button" onclick="confirmarVoto()">Confirmar</button>
+            </div>
+
+            <input type="hidden" name="numeros" id="numeros-hidden" value="">
+        </form>
+    </div>
+</body>
+</html>

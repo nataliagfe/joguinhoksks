@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo</title>
+    <link rel="stylesheet" href="oi.css">
+</head>
+<body>
+    <div id="fundo">
+        <img src="imagens/jogo.png" alt="Imagem do jogo">
+    </div>
+    <div id="quarto">
+        <div id="desenho" class="desenho" onclick="funcaoDesenho()">
+            <img src="imagens/desenho-removebg-preview.png" alt="estampa">
+        </div>
+        <div id="cofre" class="cofre" onclick="funcaoCofre()">
+            <img src="imagens/cofre__1_-removebg-preview.png" alt="cofre">
+        </div>
+    </div>
+
+    <div id="overlay">
+        <div id="popup">
+            <span id="popup-text"></span>
+            <button onclick="closePopup()">Fechar</button>
+        </div>
+    </div>
+
+    <script src="o.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+#fundo {
+    width: 96vw;    /* Define a largura da div como 100% da largura da janela */
+    height: 96vh;   /* Define a altura da div como 100% da altura da janela */
+    overflow: hidden; /* Garante que não haja rolagem */
+}
+
+#fundo img {
+    width: 100%;          /* A imagem ocupará 100% da largura do contêiner */
+    height: 100%;         /* A altura será ajustada proporcionalmente */
+    max-height: 96vh;    /* Limita a altura da imagem ao tamanho da janela */
+    object-fit: contain;    /* Garante que a imagem preencha o espaço sem distorções */
+}
+
+#urna {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    width: 35%;
+    height: 76%; 
+    border-radius: 12px;
+    background-color: rgb(91, 91, 107);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.titulo {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 110%;
+}
+#botoes {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 150px;
+    margin: auto;
+}
+button{
+    width: 80px;
+    height: 60px;
+    font-size: 18px;
+}
+#display {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+#display-numeros {
+    font-size: 24px;
+    font-weight: bold;
+}
+#comandos {
+    position: absolute;
+    left: 8%;
+    top: 75%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    max-width: 250px;
+    margin: 20px auto;
+}
+#comandos button {
+    width: 90%;
+    margin-left: 10px;
+}
+
+
+.desenho{
+    position: absolute;
+    top: 12%;
+    left: 28.5%;
+}
+
+.cofre{
+    position: absolute;
+    top: 75%;
+    left: 11%;
+}
+
+.cofre img{
+    width: 30%;
+}
+
+a{
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 300%;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+
+#desenho2{
+    position: absolute;
+    top: 4%;
+    width: 90%;
+    left: 5%;
+}
+
+#desenho3{
+    position: absolute;
+    top: 4%;
+    width: 90%;
+    left: 5%;
+}
+
+#room {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.interactive {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.interactive:hover {
+    transform: scale(1.05);
+}
+
+/* Popup */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#popup {
+    background: #222;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 80%;
+}
